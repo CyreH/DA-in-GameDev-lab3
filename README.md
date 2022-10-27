@@ -148,8 +148,10 @@ behaviors:
 - Результат обучения с 27 копиями модели![image](https://user-images.githubusercontent.com/102403656/198293199-d5a9486a-528d-456b-b1ee-f5c3c5eafad9.png)
 - Далее обученую модель нужно добавить в ассеты![image](https://user-images.githubusercontent.com/102403656/198294192-4f719686-115d-4e99-8c74-68b34eb00f11.png)![image](https://user-images.githubusercontent.com/102403656/198294258-7018e058-5d77-4f24-86ae-e8bdfbbcf50d.png)
 - Добваить обученую модель поведения к поведению сферы
+
     ![image](https://user-images.githubusercontent.com/102403656/198294604-bc959ccd-bc7b-4297-a202-f991f13706b8.png)
 - Резултат поведения модели
+
     ![Result](https://user-images.githubusercontent.com/102403656/198296390-fdad3375-e6f4-4094-8511-fc3f07fde150.gif)
 
 
