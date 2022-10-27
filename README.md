@@ -143,6 +143,10 @@ behaviors:
 
 - Запустить работу MlAgent![image](https://user-images.githubusercontent.com/102403656/198288923-553c87f3-a8bc-4e80-9f21-3145cd967cf4.png)
 - Результаты первого запуска![image](https://user-images.githubusercontent.com/102403656/198289457-a9e4a452-90d8-48fc-83da-d5776017baff.png)![image](https://user-images.githubusercontent.com/102403656/198290724-ca3e1746-225a-4fab-a02f-8d1d0b1691eb.png)
+- Результат обучения с 3 копиями модели![image](https://user-images.githubusercontent.com/102403656/198292507-01999475-2e18-4ab4-b94e-f51cb6d1709d.png)
+- Результат обучения с 9 копиями модели![image](https://user-images.githubusercontent.com/102403656/198292562-894bbfea-9baf-49e9-9c47-e56763e91822.png)
+- Результат обучения с 27 копиями модели![image](https://user-images.githubusercontent.com/102403656/198293199-d5a9486a-528d-456b-b1ee-f5c3c5eafad9.png)
+
 
 
 ## Задание 2
