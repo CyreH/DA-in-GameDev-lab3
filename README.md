@@ -113,7 +113,7 @@ public class RollerAgent : Agent
 ```
 - К объекту "сфера" добавить компоненты Rigidbody, Decision Requester, Behavior Parameters и настроить их![image](https://user-images.githubusercontent.com/102403656/198285102-609efee2-2f1d-4c57-bf3b-3ec75a99086a.png)
 - Добавить в корень проекта файл конфигурации нейронной сети, rollerball_config.yaml
-
+rollerball_config.yaml:
 ```yaml
 
 behaviors:
