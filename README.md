@@ -47,7 +47,7 @@
  ![image](https://user-images.githubusercontent.com/102403656/198271796-33d1ae0f-48a9-45b9-9446-1d1c558e50e6.png)
  ![image](https://user-images.githubusercontent.com/102403656/198271988-30f28357-3de8-42f7-b6e5-0d08463dcb1a.png)
  ![image](https://user-images.githubusercontent.com/102403656/198277240-a8e65778-29c6-483a-9085-20f1f9b4ba32.png)
-- Cоздать на сцене плоскость, куб и сферу. К сфере добавить компонент "Rigbody"![image](https://user-images.githubusercontent.com/102403656/198282407-caf0d120-a4a3-4bcc-84df-4ef8013c0729.png)
+- Cоздать на сцене плоскость, куб и сферу![image](https://user-images.githubusercontent.com/102403656/198282407-caf0d120-a4a3-4bcc-84df-4ef8013c0729.png)
 - Создать скрипт и написать нужный код![image](https://user-images.githubusercontent.com/102403656/198283834-94f24aa9-f0a8-4316-a52e-8d8382c36f53.png)
 
 ```c#
@@ -111,6 +111,7 @@ public class RollerAgent : Agent
 
 
 ```
+- К объекту "сфера" добавить компоненты Rigidbody, Decision Requester, Behavior Parameters и настроить их![image](https://user-images.githubusercontent.com/102403656/198285102-609efee2-2f1d-4c57-bf3b-3ec75a99086a.png)
 
  
 
