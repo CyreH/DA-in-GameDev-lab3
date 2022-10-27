@@ -158,73 +158,36 @@ behaviors:
 
 
 ## Задание 2
-### Реализовать запись в Google-таблицу набора данных, полученных с помощью линейной регрессии из лабораторной работы № 1
-- Записать полученные данные при помощи линейной регрессии в google-таблицу![image](https://user-images.githubusercontent.com/102403656/195168128-a396a63b-4941-4d03-b204-f22efcb6fb65.png)
+### Подробно опишите каждую строку файла конфигурации нейронной сети. Найти информацию о компонентах Decision Requester, Behavior Parameters.
+```yaml
 
-```py
+behaviors:
+  RollerBall:                           #Имя агента
+    trainer_type: ppo                   #Выбираем тип обучения(Proximal Policy Optimization)
+    hyperparameters:                    #Ниже будут задаваться гиперпараметры
+      batch_size: 10                    #Количество опытов на каждой итерации для обновления экстремумов функции
+      buffer_size: 100                  #Количество необходимого опыта для обновления модели
+      learning_rate: 3.0e-4             #Шаг обучения
+      beta: 5.0e-4                      #Отвечает за случайные действия
+      epsilon: 0.2                      #Порог расхождений между старой и новой политиками при обновлении
+      lambd: 0.99                       #Определяет авторитетность оценок значений во времени
+      num_epoch: 3                      #Количество проходов через буфер опыта, при выполнении оптимизации
+      learning_rate_schedule: linear    #Определяет как скорость обучения изменяется с течением времени
+    network_settings:                   #Сетевые настройки
+      normalize: false                  #Отключаем нормализацию входных данных
+      hidden_units: 128                 #Количество нейронов в скрытых слоях сети
+      num_layers: 2                     #Количество скрытых слоёв в сети
+    reward_signals:                     #Сигналы о вознаграждении
+      extrinsic:                        #
+        gamma: 0.99                     #Коэффициент скидки для будущих вознаграждений
+        strength: 1.0                   #Коэффициент на который умножается вознаграждение
+    max_steps: 500000                   #Общее количество шагов, которые должны быть выполнены в среде до завершения обучения
+    time_horizon: 64                    #Количество циклов ML агента, хранящихся в буфере до ввода в модель
+    summary_freq: 10000                 #Количество опыта, который необходимо собрать перед созданием и отображением статистики
 
-import gspread
-import numpy as np
-
-gc = gspread.service_account(filename='unitydatasciense-365216-c7a229f4132b.json')
-sh = gc.open('UnitySheets').worksheet('Лист2')
-
-x = [3, 21, 22, 34, 54, 34, 55, 67, 89, 99]
-x = np.array(x)
-y = [2, 22, 24, 65, 79, 82, 55, 130, 150, 199]
-y = np.array(y)
-
-
-def model(a, b, x):
-    return a * x + b
-
-
-def loss_function(a, b, x, y):
-    num = len(x)
-    prediction = model(a, b, x)
-    return (0.5 / num) * (np.square(prediction - y)).sum()
-
-
-def optimize(a, b, x, y):
-    num = len(x)
-    prediction = model(a, b, x)
-    da = (1.0 / num) * ((prediction - y) * x).sum()
-    db = (1.0 / num) * ((prediction - y).sum())
-    a = a - Lr * da
-    b = b - Lr * db
-    return a, b
-
-
-def iterate(a, b, x, y, times):
-    for i in range(times):
-        a, b = optimize(a, b, x, y)
-    return a, b
-
-
-a = np.random.rand(1)
-print(a)
-b = np.random.rand(1)
-print(b)
-Lr = 0.000001
-
-a, b = iterate(a, b, x, y, 1)
-prediction = model(a, b, x)
-loss = loss_function(a, b, x, y)
-n = 1
-for i in range(0, 1001, 200):
-    if i == 0:
-        i = 1
-    a, b = iterate(a, b, x, y, i)
-    prediction = model(a, b, x)
-    loss = loss_function(a, b, x, y)
-    print(a, b, loss)
-    sh.update(('A' + str(n)), str(i))
-    sh.update(('B' + str(n)), str(a).replace('.', ',')[1:-1])
-    sh.update(('C' + str(n)), str(b).replace('.', ',')[1:-1])
-    sh.update(('D' + str(n)), str(loss).replace('.', ','))
-    n += 1
 ```
-
+- Decision Requester - запрашивает решение через регулярные промежутки времени и обрабатывает чередование между ними во время обучения
+- Behavior Parameters - определяет принятие объектом решений, в него указывается какой тип поведения будет использоваться: уже обученная модель или удалённый процесс обучения
 
 
 ## Задание 3
