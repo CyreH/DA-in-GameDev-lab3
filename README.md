@@ -113,7 +113,6 @@ public class RollerAgent : Agent
 ```
 - К объекту "сфера" добавить компоненты Rigidbody, Decision Requester, Behavior Parameters и настроить их![image](https://user-images.githubusercontent.com/102403656/198285102-609efee2-2f1d-4c57-bf3b-3ec75a99086a.png)
 - Добавить в корень проекта файл конфигурации нейронной сети, rollerball_config.yaml
-rollerball_config.yaml:
 ```yaml
 
 behaviors:
@@ -141,6 +140,10 @@ behaviors:
     summary_freq: 10000
 
 ```
+
+- Запустить работу MlAgent![image](https://user-images.githubusercontent.com/102403656/198288923-553c87f3-a8bc-4e80-9f21-3145cd967cf4.png)
+- Результаты первого запуска![image](https://user-images.githubusercontent.com/102403656/198289457-a9e4a452-90d8-48fc-83da-d5776017baff.png)![image](https://user-images.githubusercontent.com/102403656/198290724-ca3e1746-225a-4fab-a02f-8d1d0b1691eb.png)
+
 
 ## Задание 2
 ### Реализовать запись в Google-таблицу набора данных, полученных с помощью линейной регрессии из лабораторной работы № 1
